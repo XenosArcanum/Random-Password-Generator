@@ -5,6 +5,7 @@ let btn = document.getElementById("gen")
 let pw1 = document.getElementById("sample-1")
 let pw2 = document.getElementById("sample-2")
 let num = 15;
+let foot = document.getElementById("footer")
 
 //------------------------------------------//
         // Generate Password Button //
@@ -12,6 +13,7 @@ let num = 15;
 btn.addEventListener("click", function (){
     pw1.textContent = ""
     pw2.textContent = ""
+    foot.textContent = "Click to Copy!";
 
     for (let i = 0; i < num; i++) {
         let randomIndexOne = Math.floor( Math.random() * characters.length )
@@ -39,12 +41,25 @@ btn.addEventListener("click", function (){
 //------------------------------------------//
 pw1.addEventListener("click", function() {
 
-    if (pw1.textContent != "") {  
+    if (pw1.textContent != "") {
         /* Copy the text inside the text field */
         navigator.clipboard.writeText(pw1.textContent);
 
         /* Alert the copied text */
-        alert("Password Copied!");  
+        foot.textContent = "Password #1 Copied!";  
+    } 
+})
+
+pw2.addEventListener("click", function() {
+
+    if (pw2.textContent != "") {
+        // let copyText = pw1.textContent
+    
+        /* Copy the text inside the text field */
+        navigator.clipboard.writeText(pw2.textContent);
+
+        /* Alert the copied text */
+        foot.textContent = "Password #2 Copied!";  
     } 
 })
 
