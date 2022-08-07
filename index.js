@@ -39,11 +39,9 @@ btn.addEventListener("click", function (){
 //------------------------------------------//
 pw1.addEventListener("click", function() {
 
-    if (pw1.textContent != "") {
-        let copyText = pw1.textContent
-    
+    if (pw1.textContent != "") {  
         /* Copy the text inside the text field */
-        navigator.clipboard.writeText(copyText.value);
+        navigator.clipboard.writeText(pw1.textContent);
 
         /* Alert the copied text */
         alert("Password Copied!");  
